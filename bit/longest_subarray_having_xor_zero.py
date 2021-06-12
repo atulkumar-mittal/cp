@@ -5,13 +5,12 @@ def func(arr):
     maxlen = 0
     while i < len(arr):
         prexor = prexor ^ arr[i]
-        if prexor != 0 and hashing.get(prexor) is None:
-            hashing[prexor] = i
+        if prexor == 0:
+            maxlen = i+1
+        elif hashing.get(prexor) is not None:
+            maxlen = max(maxlen, i - hashing.get(prexor))
         else:
-            if prexor == 0:
-                maxlen = max(maxlen, i + 1)
-            else:
-                maxlen = max(maxlen, i - hashing.get(prexor))
+            hashing[prexor] = i
         print('index: {}, prexor:{}, maxlen:{}, hasing:{}'.format(i, prexor, maxlen, hashing))
         i += 1
 

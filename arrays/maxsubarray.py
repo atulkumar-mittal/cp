@@ -10,5 +10,5 @@ def maxSubArraySum(a, size):
 
 
 # Driver function to check the above function
-a = [-2, -3, -4, -1, -2, -1, -5, -3]
+a = [-2, -3, -4, 1, -2, -1, -5, -3]
 print( maxSubArraySum(a, len(a)))
